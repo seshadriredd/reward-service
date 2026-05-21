@@ -41,22 +41,22 @@ File: `src/main/resources/data.sql`
 
 ```sql
 INSERT INTO transactions VALUES
-(1,  101, 'Seshadri',    120.00, DATEADD('MONTH', -2, CURRENT\\\_DATE)),
-(2,  101, 'Seshadri',     75.00, DATEADD('MONTH', -1, CURRENT\\\_DATE)),
-(3,  101, 'Seshadri',    200.00, CURRENT\\\_DATE),
-(4,  102, 'Raju',        130.00, DATEADD('MONTH', -2, CURRENT\\\_DATE)),
-(5,  102, 'Raju',         90.00, DATEADD('MONTH', -1, CURRENT\\\_DATE)),
-(6,  102, 'Raju',        180.00, CURRENT\\\_DATE),
-(7,  103, 'Kiran',        45.00, DATEADD('MONTH', -2, CURRENT\\\_DATE)),
-(8,  103, 'Kiran',        60.00, DATEADD('MONTH', -1, CURRENT\\\_DATE)),
-(9,  103, 'Kiran',       140.00, CURRENT\\\_DATE),
-(10, 104, 'Anil',         49.00, CURRENT\\\_DATE),
-(11, 104, 'Anil',         51.00, CURRENT\\\_DATE),
-(12, 104, 'Anil',         99.00, CURRENT\\\_DATE),
-(13, 104, 'Anil',        101.00, CURRENT\\\_DATE),
-(14, 105, 'Mahesh',      250.00, CURRENT\\\_DATE),
-(15, 105, 'Mahesh',      300.00, DATEADD('MONTH', -1, CURRENT\\\_DATE)),
-(16, 106, 'OldCustomer', 500.00, DATEADD('MONTH', -6, CURRENT\\\_DATE));
+(1,  101, 'Seshadri',    120.00, DATEADD('MONTH', -2, CURRENT_DATE)),
+(2,  101, 'Seshadri',     75.00, DATEADD('MONTH', -1, CURRENT_DATE)),
+(3,  101, 'Seshadri',    200.00, CURRENT_DATE),
+(4,  102, 'Raju',        130.00, DATEADD('MONTH', -2, CURRENT_DATE)),
+(5,  102, 'Raju',         90.00, DATEADD('MONTH', -1, CURRENT_DATE)),
+(6,  102, 'Raju',        180.00, CURRENT_DATE),
+(7,  103, 'Kiran',        45.00, DATEADD('MONTH', -2, CURRENT_DATE)),
+(8,  103, 'Kiran',        60.00, DATEADD('MONTH', -1, CURRENT_DATE)),
+(9,  103, 'Kiran',       140.00, CURRENT_DATE),
+(10, 104, 'Anil',         49.00, CURRENT_DATE),
+(11, 104, 'Anil',         51.00, CURRENT_DATE),
+(12, 104, 'Anil',         99.00, CURRENT_DATE),
+(13, 104, 'Anil',        101.00, CURRENT_DATE),
+(14, 105, 'Mahesh',      250.00, CURRENT_DATE),
+(15, 105, 'Mahesh',      300.00, DATEADD('MONTH', -1, CURRENT_DATE)),
+(16, 106, 'OldCustomer', 500.00, DATEADD('MONTH', -6, CURRENT_DATE));
 ```
 
 Customer 106 has transactions older than 3 months and will not appear in any response.
@@ -83,7 +83,7 @@ http://localhost:8080/api/rewards/101
 {
   "customerId": 101,
   "customerName": "Seshadri",
-  "monthlyRewards": \\\[
+  "monthlyRewards": [
     { "month": "MARCH", "points": 90  },
     { "month": "APRIL", "points": 25  },
     { "month": "MAY",   "points": 250 }
@@ -103,11 +103,11 @@ http://localhost:8080/api/rewards/allCustomers
 ```
 
 ```json
-\\\[
+[
   {
     "customerId": 101,
     "customerName": "Seshadri",
-    "monthlyRewards": \\\[
+    "monthlyRewards": [
       { "month": "MARCH", "points": 90  },
       { "month": "APRIL", "points": 25  },
       { "month": "MAY",   "points": 250 }
@@ -117,7 +117,7 @@ http://localhost:8080/api/rewards/allCustomers
   {
     "customerId": 102,
     "customerName": "Raju",
-    "monthlyRewards": \\\[
+    "monthlyRewards": [
       { "month": "MARCH", "points": 60  },
       { "month": "APRIL", "points": 40  },
       { "month": "MAY",   "points": 210 }
